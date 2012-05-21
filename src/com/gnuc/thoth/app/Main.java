@@ -61,7 +61,7 @@ public class Main extends ActivityGroup
 		instance = this;
 		Settings.read();
 		//
-		Thoth.TRACKER.startNewSession("UA-24128171-1", Thoth.cx);
+		Thoth.TRACKER.startNewSession("UA-24XXXX71-1", Thoth.cx);
 		if (Settings.APP_TRACKING_PENDING)
 		{
 			Settings.APP_TRACKING_PENDING = Thoth.TRACKER.dispatch();

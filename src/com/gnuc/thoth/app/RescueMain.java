@@ -29,7 +29,7 @@ public class RescueMain extends Activity
 		//
 		Thoth.TRACKER = GoogleAnalyticsTracker.getInstance();
 		Thoth.TRACKER.setAnonymizeIp(true);
-		Thoth.TRACKER.startNewSession("UA-24128171-1", RescueMain.this);
+		Thoth.TRACKER.startNewSession("UA-24XXXX71-1", RescueMain.this);
 		//
 		AlertDialog.Builder adb = new AlertDialog.Builder(RescueMain.this);
 		adb.setIcon(R.drawable.icon);

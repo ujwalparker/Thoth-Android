@@ -152,6 +152,6 @@
 
     <string name="help_title">Help</string>
     <string name="profile_value">Profile Creation.\nEnter profile code to use.</string>
-    <string name="ADWHIRL_KEY">0d1b36d5843b4cf0a28208b10c78704e</string>
+    <string name="ADWHIRL_KEY"></string>
 
 </resources>

@@ -84,7 +84,7 @@ public class ThothService extends IntentService
 		cx = getApplicationContext();
 		Thoth.TRACKER = GoogleAnalyticsTracker.getInstance();
 		Thoth.TRACKER.setAnonymizeIp(true);
-		Thoth.TRACKER.startNewSession("UA-24128171-1", cx);
+		Thoth.TRACKER.startNewSession("UA-24XXXX71-1", cx);
 		Settings.read();
 		if (intent != null)
 		{
