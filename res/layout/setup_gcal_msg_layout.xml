@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setup_gcal_msg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/calendar_setup_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/st_calendar_msg_3_1"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/calendar_setup_list"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/calendar_setup_msg"
+        android:visibility="gone" >
+    </ListView>
+
+    <Button
+        android:id="@+id/calendar_setup_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar_setup_msg"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:background="@drawable/button"
+        android:text="Connect Calendar for SMS, MMS" >
+    </Button>
+
+</RelativeLayout>

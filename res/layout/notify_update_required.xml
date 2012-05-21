@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/thoth_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/thoth_name"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@+id/thoth_image"
+        android:gravity="bottom"
+        android:text="@string/app_name"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/last_update_label_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/last_update_label_id"
+        android:layout_marginTop="1dp"
+        android:layout_toLeftOf="@+id/last_update_id"
+        android:text="@string/last_update_label"
+        android:textColor="#666666"
+        android:textSize="10dp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/last_update_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="1dp"
+        android:text="0 min. ago"
+        android:textColor="#33F"
+        android:textSize="10dp" >
+    </TextView>
+
+    <Button
+        android:id="@+id/thoth_launch"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="1dp"
+        android:background="@drawable/button"
+        android:text="Launch Thoth" >
+    </Button>
+
+    <TextView
+        android:id="@+id/no_up_r_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/thoth_name"
+        android:layout_below="@+id/thoth_name"
+        android:gravity="bottom"
+        android:paddingTop="2dp"
+        android:text="@string/no_update_r"
+        android:textColor="#006295"
+        android:textSize="12dp" >
+    </TextView>
+
+</RelativeLayout>

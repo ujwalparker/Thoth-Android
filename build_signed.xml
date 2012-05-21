@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Thoth.Android" default="all" basedir=".">
+	<property name="verbose" value="false" />
+
+	<echo message="********************* Clear - Build - Release - Sign - Zip - Install *********************" />
+
+	<property file="ant.properties" />
+	<loadproperties srcFile="local.properties" />
+	<loadproperties srcFile="project.properties" />
+
+	<!-- Basic -->
+	<property name="java.encoding" value="UTF-8" />
+	<property name="java.target" value="1.5" />
+	<property name="java.source" value="1.5" />
+	<property name="aapt.resource.filter" value="" />
+
+
+	<path id="android.antlibs">
+		<pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
+	</path>
+
+	<!-- Custom tasks -->
+	<taskdef name="setup" classname="com.android.ant.NewSetupTask" classpathref="android.antlibs" />
+	<taskdef name="aapt" classname="com.android.ant.AaptExecTask" classpathref="android.antlibs" />
+	<taskdef name="aidl" classname="com.android.ant.AidlExecTask" classpathref="android.antlibs" />
+	<taskdef name="renderscript" classname="com.android.ant.RenderScriptTask" classpathref="android.antlibs" />
+	<taskdef name="dex" classname="com.android.ant.DexExecTask" classpathref="android.antlibs" />
+	<taskdef name="apkbuilder" classname="com.android.ant.ApkBuilderTask" classpathref="android.antlibs" />
+	<taskdef name="zipalign" classname="com.android.ant.ZipAlignTask" classpathref="android.antlibs" />
+	<taskdef name="xpath" classname="com.android.ant.XPathTask" classpathref="android.antlibs" />
+	<taskdef name="if" classname="com.android.ant.IfElseTask" classpathref="android.antlibs" />
+
+	<!-- Input directories -->
+	<property name="source.dir" value="src" />
+	<property name="source.absolute.dir" location="${source.dir}" />
+	<property name="gen.absolute.dir" location="gen" />
+	<property name="resource.absolute.dir" location="res" />
+	<property name="asset.absolute.dir" location="assets" />
+	<property name="jar.libs.dir" value="lib" />
+	<property name="jar.libs.absolute.dir" location="${jar.libs.dir}" />
+	<property name="native.libs.absolute.dir" location="lib/native" />
+
+	<!-- Output directories -->
+	<property name="out.dir" value="bin" />
+	<property name="out.absolute.dir" location="${out.dir}" />
+	<property name="out.classes.absolute.dir" location="${out.dir}/classes" />
+	<property name="out.res.absolute.dir" location="${out.dir}/res" />
+
+	<!-- Tools location -->
+	<property name="android.tools.dir" location="${sdk.dir}/tools" />
+	<property name="android.platform.tools.dir" location="${sdk.dir}/platform-tools" />
+
+	<condition property="exe" value=".exe" else="">
+		<os family="windows" />
+	</condition>
+	<condition property="bat" value=".bat" else="">
+		<os family="windows" />
+	</condition>
+
+	<property name="adb" location="${android.platform.tools.dir}/adb${exe}" />
+	<property name="zipalign" location="${android.tools.dir}/zipalign${exe}" />
+	<property name="aidl" location="${android.platform.tools.dir}/aidl${exe}" />
+	<property name="aapt" location="${android.platform.tools.dir}/aapt${exe}" />
+	<property name="dx" location="${android.platform.tools.dir}/dx${bat}" />
+
+	<!-- Intermediate files -->
+	<property name="dex.file.name" value="classes.dex" />
+	<property name="intermediate.dex.file" location="${out.absolute.dir}/${dex.file.name}" />
+	<property name="resource.package.file.name" value="${ant.project.name}.ap_" />
+
+	<!-- Build property file -->
+	<property name="out.build.prop.file" location="${out.absolute.dir}/build.prop" />
+	<property name="build.packaging.nocrunch" value="true" />
+
+	<property name="adb.device.arg" value="-d" />
+
+	<target name="all" depends="-clean,-setup,-compile,-dex,-package,-release,-install,-cleanup" />
+
+	<target name="-clean" description="Removes output files created by other targets.">
+		<delete dir="${out.absolute.dir}" verbose="${verbose}" />
+	</target>
+
+	<target name="-setup">
+		<if>
+			<condition>
+				<not>
+					<isset property="setup.done" />
+				</not>
+			</condition>
+			<then>
+				<property name="setup.done" value="true" />
+
+				<echo>Gathering info for ${ant.project.name}...</echo>
+
+				<setup projectTypeOut="android.project.type" androidJarFileOut="android.jar" androidAidlFileOut="android.aidl" renderScriptExeOut="renderscript" renderScriptIncludeDirOut="android.rs" bootclasspathrefOut="android.target.classpath" projectLibrariesRootOut="project.libraries" projectLibrariesJarsOut="project.libraries.jars" projectLibrariesResOut="project.libraries.res" projectLibrariesPackageOut="project.libraries.package" projectLibrariesLibsOut="project.libraries.libs" targetApiOut="target.api" />
+				<xpath input="AndroidManifest.xml" expression="/manifest/@package" output="manifest.package" />
+				<xpath input="AndroidManifest.xml" expression="/manifest/@android:versionCode" output="version.code" default="" />
+				<xpath input="AndroidManifest.xml" expression="/manifest/@android:versionName" output="version.name" default="" />
+
+				<property name="out.packaged.file" location="${out.absolute.dir}/${ant.project.name}.v${version.name}.p.apk" />
+				<property name="out.unaligned.file" location="${out.absolute.dir}/${ant.project.name}.v${version.name}.u.apk" />
+				<property name="out.final.file" location="${out.absolute.dir}/${ant.project.name}.v${version.name}.apk" />
+
+				<property name="build.target" value="release" />
+				<property name="build.last.target" value="${build.target}" />
+				<property name="build.is.signing.debug" value="false" />
+				<property name="build.is.mode.release" value="true" />
+
+				<property file="${out.build.prop.file}" />
+
+				<!-- compile the libraries if any -->
+				<if>
+					<condition>
+						<isreference refid="project.libraries" />
+					</condition>
+					<then>
+						<echo>Building Libraries</echo>
+						<subant
+		                        buildpathref="project.libraries"
+		                        antfile="build.xml"
+		                        target="${build.target}"
+		                        failonerror="true"/>
+						<echo>
+						</echo>
+						<echo>############################################</echo>
+						<echo>**** Back to project ${ant.project.name} ****</echo>
+						<echo>############################################</echo>
+					</then>
+				</if>
+
+				<path id="jar.libs.ref">
+					<fileset dir="${jar.libs.absolute.dir}" includes="*.jar" />
+					<path refid="project.libraries.jars" />
+				</path>
+
+				<mkdir dir="${resource.absolute.dir}" />
+				<mkdir dir="${jar.libs.absolute.dir}" />
+				<mkdir dir="${out.absolute.dir}" />
+				<mkdir dir="${out.res.absolute.dir}" />
+
+				<mkdir dir="${gen.absolute.dir}" />
+				<mkdir dir="${out.classes.absolute.dir}" />
+			</then>
+		</if>
+	</target>
+
+	<target name="-compile">
+		<aidl executable="${aidl}" framework="${android.aidl}" genFolder="${gen.absolute.dir}">
+			<source path="${source.absolute.dir}" />
+		</aidl>
+
+		<renderscript executable="${renderscript}" framework="${android.rs}" genFolder="${gen.absolute.dir}" resFolder="${resource.absolute.dir}/raw" targetApi="${target.api}">
+			<source path="${source.absolute.dir}" />
+		</renderscript>
+
+		<aapt executable="${aapt}" command="package" versioncode="${version.code}" versionname="${version.name}" manifest="AndroidManifest.xml" assets="${asset.absolute.dir}" androidjar="${android.jar}" apkfolder="${out.absolute.dir}" nocrunch="${build.packaging.nocrunch}" resourcefilename="${resource.package.file.name}" resourcefilter="${aapt.resource.filter}" projectLibrariesResName="project.libraries.res" projectLibrariesPackageName="project.libraries.package" previousBuildType="${build.last.target}" buildType="${build.target}">
+			<res path="${out.res.absolute.dir}" />
+			<res path="${resource.absolute.dir}" />
+		</aapt>
+
+		<condition property="extensible.classpath" value="${tested.project.absolute.dir}/bin/classes" else=".">
+			<isset property="tested.project.absolute.dir" />
+		</condition>
+
+		<condition property="extensible.libs.classpath" value="${tested.project.absolute.dir}/${jar.libs.dir}" else="${jar.libs.dir}">
+			<isset property="tested.project.absolute.dir" />
+		</condition>
+
+		<javac encoding="${java.encoding}" source="${java.source}" target="${java.target}" debug="true" extdirs="" destdir="${out.classes.absolute.dir}" bootclasspathref="android.target.classpath" verbose="${verbose}" classpath="${extensible.classpath}" classpathref="jar.libs.ref">
+			<src path="${source.absolute.dir}" />
+			<src path="${gen.absolute.dir}" />
+			<classpath>
+				<fileset dir="${extensible.libs.classpath}" includes="*.jar" />
+			</classpath>
+		</javac>
+
+	</target>
+
+	<target name="-dex">
+		<dex-helper />
+	</target>
+
+	<target name="-crunch">
+		<exec executable="${aapt}" taskName="crunch">
+			<arg value="crunch" />
+			<arg value="-v" />
+			<arg value="-S" />
+			<arg path="${resource.absolute.dir}" />
+			<arg value="-C" />
+			<arg path="${out.res.absolute.dir}" />
+		</exec>
+	</target>
+
+	<target name="-package" depends="-crunch">
+		<package-helper />
+	</target>
+
+	<target name="-release">
+		<!-- KeyStore -->
+		<property name="has.keystore" value="true" />
+		<echo message="Keystore copying from : ${gnu.keystore.dir}/gnuconsultancy.keystore to ${out.dir}/temp/gnuconsultancy.keystore" />
+		<copy file="${gnu.keystore.dir}/gnuconsultancy.keystore" tofile="${out.dir}/temp/gnuconsultancy.keystore" />
+		<property name="key.store" value="${out.dir}/temp/gnuconsultancy.keystore" />
+		<property name="key.alias" value="GNUC" />
+		<property name="key.store.password" value="x.chu/uh_1984" />
+		<property name="key.alias.password" value="o/o&amp;piNg01" />
+		<sequential>
+			<signjar jar="${out.packaged.file}" signedjar="${out.unaligned.file}" keystore="${key.store}" storepass="${key.store.password}" alias="${key.alias}" keypass="${key.alias.password}" verbose="${verbose}" />
+
+			<!-- Zip aligns the APK -->
+			<zipalign-helper in.package="${out.unaligned.file}" out.package="${out.final.file}" />
+			<echo>Release Package: ${out.final.file} for Release : ${version.code} : Version : ${version.name}</echo>
+		</sequential>
+	</target>
+
+	<target name="-install" description="Installs the newly build package. If the application was previously installed, the application is reinstalled if the signature matches.">
+		<if>
+			<condition>
+				<isset property="out.final.file" />
+			</condition>
+			<then>
+				<if>
+					<condition>
+						<resourceexists>
+							<file file="${out.final.file}" />
+						</resourceexists>
+					</condition>
+					<then>
+						<echo>Installing ${out.final.file} onto device...</echo>
+						<exec executable="${adb}" failonerror="true">
+							<arg line="${adb.device.arg}" />
+							<arg value="install" />
+							<arg value="-r" />
+							<arg path="${out.final.file}" />
+						</exec>
+					</then>
+					<else>
+						<fail message="File ${out.final.file} does not exist." />
+					</else>
+				</if>
+			</then>
+			<else>
+				<echo>Install file not specified.</echo>
+				<fail />
+			</else>
+		</if>
+	</target>
+
+	<target name="-cleanup">
+		<delete dir="${out.dir}/res" verbose="${verbose}" />
+		<delete dir="${out.dir}/temp" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/classes.dex" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/classes.dex.d" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/${ant.project.name}.ap_" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/${ant.project.name}.ap_.d" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/${ant.project.name}.v${version.name}.p.apk" verbose="${verbose}" />
+		<delete file="${out.absolute.dir}/${ant.project.name}.v${version.name}.p.apk.d" verbose="${verbose}" />
+		<delete file="${out.unaligned.file}" verbose="${verbose}" />
+	</target>
+
+	<target name="-uninstall" description="Uninstalls the application from a running emulator or device.">
+		<if>
+			<condition>
+				<isset property="manifest.package" />
+			</condition>
+			<then>
+				<uninstall-helper app.package="${manifest.package}" />
+			</then>
+			<else>
+				<echo>Could not find application package in manifest. Cannot run 'adb uninstall'.</echo>
+			</else>
+		</if>
+		<uninstall-helper app.package="${manifest.package}" />
+	</target>
+
+	<macrodef name="dex-helper">
+		<element name="external-libs" optional="yes" />
+		<attribute name="nolocals" default="false" />
+		<sequential>
+			<property name="out.dex.input.absolute.dir" value="${out.classes.absolute.dir}" />
+			<if>
+				<condition>
+					<isreference refid="out.dex.jar.input.ref" />
+				</condition>
+				<else>
+					<path id="out.dex.jar.input.ref">
+						<path refid="jar.libs.ref" />
+					</path>
+				</else>
+			</if>
+			<dex executable="${dx}" output="${intermediate.dex.file}" nolocals="@{nolocals}" verbose="${verbose}" previousBuildType="${build.last.target}" buildType="${build.target}">
+				<path path="${out.dex.input.absolute.dir}" />
+				<path refid="out.dex.jar.input.ref" />
+				<external-libs />
+			</dex>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="package-helper">
+		<element name="extra-jars" optional="yes" />
+		<sequential>
+			<apkbuilder outfolder="${out.absolute.dir}" resourcefile="${resource.package.file.name}" apkfilepath="${out.packaged.file}" debugpackaging="${build.is.packaging.debug}" debugsigning="${build.is.signing.debug}" verbose="${verbose}" hascode="true" previousBuildType="${build.last.is.packaging.debug}/${build.last.is.signing.debug}" buildType="${build.is.packaging.debug}/${build.is.signing.debug}">
+				<dex path="${intermediate.dex.file}" />
+				<sourcefolder path="${source.absolute.dir}" />
+				<jarfile refid="jar.libs.ref" />
+				<nativefolder path="${native.libs.absolute.dir}" />
+				<nativefolder refid="project.libraries.libs" />
+				<extra-jars />
+			</apkbuilder>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="zipalign-helper">
+		<attribute name="in.package" />
+		<attribute name="out.package" />
+		<sequential>
+			<zipalign executable="${zipalign}" input="@{in.package}" output="@{out.package}" verbose="${verbose}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="uninstall-helper">
+		<attribute name="app.package" default="false" />
+		<sequential>
+			<echo>Uninstalling @{app.package} from the default device...</echo>
+			<exec executable="${adb}" failonerror="true">
+				<arg line="${adb.device.arg}" />
+				<arg value="uninstall" />
+				<arg value="@{app.package}" />
+			</exec>
+		</sequential>
+	</macrodef>
+</project>

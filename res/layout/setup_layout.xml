@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/app_name_id"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:gravity="bottom"
+        android:padding="2dp"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/app_version_id"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@+id/app_name_id"
+        android:background="#000000"
+        android:gravity="bottom"
+        android:padding="5dp"
+        android:text="@string/app_version"
+        android:textColor="#FFFFFF"
+        android:textSize="12dp" >
+    </TextView>
+
+    <ViewFlipper
+        android:id="@+id/setup_flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_name_id" >
+
+        <LinearLayout
+            android:id="@+id/setup_screen_0"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/st_welcome_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/st_welcome"
+                android:textColor="#FFCC00"
+                android:textSize="18dp" >
+            </TextView>
+
+            <include layout="@layout/gradient_view_two" />
+
+            <TextView
+                android:id="@+id/st_welcome_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="@string/st_welcome_msg"
+                android:textColor="#FFFFFFFF"
+                android:textSize="15dp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/setup_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:text="Setup"
+                    android:textColor="#202020"
+                    android:textSize="55dp" >
+                </TextView>
+
+                <Button
+                    android:id="@+id/setup_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button"
+                    android:text="Continue"
+                    android:visibility="invisible" >
+                </Button>
+
+                <ProgressBar
+                    android:id="@+id/setup_pb"
+                    style="@android:style/Widget.ProgressBar.Small"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="25dp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setup_screen_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/st_profile_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/st_profile"
+                android:textColor="#FFCC00"
+                android:textSize="18dp" >
+            </TextView>
+
+            <include layout="@layout/gradient_view_two" />
+
+            <EditText
+                android:id="@+id/st_profile_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:focusable="true"
+                android:hint="Enter a profile code of your choice"
+                android:lines="1"
+                android:text="" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/st_profile_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:padding="10dp"
+                android:text="@string/st_profile_msg"
+                android:textColor="#FFFFFFFF"
+                android:textSize="15dp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/profile_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:text="Setup"
+                    android:textColor="#202020"
+                    android:textSize="55dp" >
+                </TextView>
+
+                <Button
+                    android:id="@+id/profile_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button"
+                    android:text="Continue"
+                    android:visibility="invisible" >
+                </Button>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setup_screen_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/st_account_msg_1_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/st_account_msg_1"
+                android:textColor="#FFFFCC00"
+                android:textSize="16dp" >
+            </TextView>
+
+            <include layout="@layout/gradient_view_two" />
+
+            <ListView
+                android:id="@+id/st_account_list"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" >
+            </ListView>
+
+            <TextView
+                android:id="@+id/st_account_msg_2_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="8dp"
+                android:text="@string/st_account_msg_2"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setup_screen_3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include layout="@layout/gradient_view_two" />
+
+            <RelativeLayout
+                android:id="@+id/st_set_account"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/st_set_account_msg_1_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="5dp"
+                    android:text="@string/st_set_account_msg_1"
+                    android:textColor="#FFCC00"
+                    android:textSize="16dp" >
+                </TextView>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_account_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/st_set_account_msg_1_id"
+                    android:layout_margin="10dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/st_set_account_1_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/t_set_done"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_1_pb1"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_account_1_ok"
+                        android:layout_margin="5dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_account_1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:layout_toRightOf="@+id/st_set_account_1_ok"
+                        android:gravity="bottom"
+                        android:text="Account Setup"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" >
+                    </TextView> <!-- #77FF00 -->
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_1_pb2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_toRightOf="@+id/st_set_account_1_title"
+                        android:visibility="gone" >
+                    </ProgressBar>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_1_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_1_ok"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_1_1_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_1_1_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_1_1_ok"
+                            android:layout_margin="3dp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_1_1_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_1_1_ok"
+                            android:gravity="center"
+                            android:text="Account creation"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_1_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_1_1"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_1_2_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_1_2_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_1_2_ok"
+                            android:layout_margin="3dp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_1_2_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_1_2_ok"
+                            android:gravity="center"
+                            android:text="Account initialisation"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_account_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/st_set_account_1"
+                    android:layout_margin="10dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/st_set_account_2_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_2_pb1"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_account_2_ok"
+                        android:layout_margin="3dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_account_2_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:layout_toRightOf="@+id/st_set_account_2_ok"
+                        android:gravity="bottom"
+                        android:text="Log Collection"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" >
+                    </TextView> <!-- #77FF00 -->
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_2_pb2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_toRightOf="@+id/st_set_account_2_title" >
+                    </ProgressBar>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_2_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_2_ok"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="invisible" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_2_1_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_2_1_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_2_1_ok"
+                            android:layout_margin="3dp" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_2_1_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_2_1_ok"
+                            android:gravity="center"
+                            android:text="CALL logs"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_2_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_2_1"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="invisible" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_2_2_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_2_2_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_2_2_ok"
+                            android:layout_margin="3dp"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_2_2_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_2_2_ok"
+                            android:gravity="center"
+                            android:text="SMS logs"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_2_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_2_2"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="invisible" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_2_3_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_2_3_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_2_3_ok"
+                            android:layout_margin="3dp"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_2_3_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_2_3_ok"
+                            android:gravity="center"
+                            android:text="MMS logs"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_2_4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_2_3"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="invisible" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_2_4_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_2_4_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_2_4_ok"
+                            android:layout_margin="3dp"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_2_4_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_2_4_ok"
+                            android:gravity="center"
+                            android:text="DATA logs"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_account_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/st_set_account_2"
+                    android:layout_margin="10dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/st_set_account_3_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_3_pb1"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_account_3_ok"
+                        android:layout_margin="3dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_account_3_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:layout_toRightOf="@+id/st_set_account_3_ok"
+                        android:gravity="bottom"
+                        android:text="Log Analysis"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" >
+                    </TextView> <!-- #77FF00 -->
+
+                    <ProgressBar
+                        android:id="@+id/st_set_account_3_pb2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_toRightOf="@+id/st_set_account_3_title"
+                        android:visibility="visible" >
+                    </ProgressBar>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_3_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_3_ok"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_3_1_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_3_1_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_3_1_ok"
+                            android:layout_margin="3dp" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_3_1_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_3_1_ok"
+                            android:gravity="center"
+                            android:text="Log Upload"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/st_set_account_3_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/st_set_account_3_1"
+                        android:layout_marginLeft="25dp"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:id="@+id/st_set_account_3_2_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_margin="3dp"
+                            android:src="@drawable/t_set_done_ch"
+                            android:visibility="invisible" >
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/st_set_account_3_2_pb"
+                            style="@android:style/Widget.ProgressBar.Small"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/st_set_account_3_2_ok"
+                            android:layout_margin="3dp" />
+
+                        <TextView
+                            android:id="@+id/st_set_account_3_2_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_margin="3dp"
+                            android:layout_toRightOf="@+id/st_set_account_3_2_ok"
+                            android:gravity="center"
+                            android:text="Analytics Download"
+                            android:textSize="15dp" >
+                        </TextView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/setup_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:text="Setup"
+                    android:textColor="#202020"
+                    android:textSize="55dp" >
+                </TextView>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setup_screen_4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/st_gmail_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Google Mail - Thoth Connect+"
+                android:textColor="#FFFFCC00"
+                android:textSize="18dp" >
+            </TextView>
+
+            <include layout="@layout/gradient_view_two" />
+
+            <TextView
+                android:id="@+id/st_gmail_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/st_gmail_msg"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" >
+            </TextView>
+
+            <Button
+                android:id="@+id/gmail_setup_bt"
+                android:layout_width="125dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:text="Connect GMail" >
+            </Button>
+
+            <Button
+                android:id="@+id/gmail_setup_btno"
+                android:layout_width="125dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:background="@drawable/button"
+                android:text="Skip" >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setup_screen_5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/st_calendar_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Google Calendar - Thoth Connect+"
+                android:textColor="#FFFFCC00"
+                android:textSize="18dp" >
+            </TextView>
+
+            <include layout="@layout/gradient_view_two" />
+
+            <TextView
+                android:id="@+id/st_calendar_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/st_calendar_msg_1_1"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" >
+            </TextView>
+
+            <ListView
+                android:id="@+id/st_calendar_list"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:visibility="gone" >
+            </ListView>
+
+            <Button
+                android:id="@+id/calendar_setup_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:text="Connect Google Calendar" >
+            </Button>
+
+            <Button
+                android:id="@+id/calendar_setup_btno"
+                android:layout_width="125dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:text="Skip" >
+            </Button>
+        </LinearLayout>
+    </ViewFlipper>
+
+</RelativeLayout>

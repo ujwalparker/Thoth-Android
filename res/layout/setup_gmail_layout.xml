@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setup_gmail"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:id="@+id/setup_gmail_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/st_gmail_id"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/st_gmail_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/st_gmail_msg"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" >
+        </TextView>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/gmail_setup_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setup_gmail_scroll"
+        android:layout_centerHorizontal="true"
+       android:ems="15"
+        android:background="@drawable/button"
+        android:text="Connect GMail" >
+    </Button>
+
+</RelativeLayout>

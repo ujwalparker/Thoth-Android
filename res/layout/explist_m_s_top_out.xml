@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:id="@+id/explist_m_s_top_out_holder"
+	android:padding="5dp">
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:id="@+id/t_m_s_top_out_label_id"
+		android:text="@string/t_m_s_top_out_label"
+		android:layout_alignParentLeft="true"
+		android:textSize="18dp"
+		android:layout_alignParentTop="true"
+		android:layout_marginLeft="30dp"
+		android:gravity="left"
+		android:textColor="#FFFFFF"></TextView>
+	<TextView
+		android:layout_toRightOf="@+id/t_m_s_top_out_label_id"
+		android:layout_width="wrap_content"
+		android:layout_marginLeft="4dp"
+		android:layout_height="wrap_content"
+		android:text="@string/t_m_s_label"
+		android:textColor="#FFFFFF"
+		android:textSize="10dp"
+		android:layout_alignParentTop="true"></TextView>
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_alignParentRight="true"
+		android:id="@+id/t_m_s_top_out_id"
+		android:layout_height="fill_parent"
+		android:layout_alignParentTop="true"
+		android:src="@drawable/t_m_s_top_out"
+		android:gravity="center"
+		android:layout_margin="4dp"></ImageView>
+</RelativeLayout>

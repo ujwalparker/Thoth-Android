@@ -1,0 +1,22 @@
+Get ultimate logging on your phone with Thoth.
+
+Hi, 
+
+Attached are your logs recorded by Thoth for the period LOG_PERIOD.
+
+Your Call, SMS, MMS and Data logs are mailed to your mailbox every week.
+
+Regards,
+Thoth App
+
+
+Copyright © 2012 , All rights reserved.
+This email and any attachments to it are intended solely 
+for the use of the individual to whom it is addressed. 
+If you are not the intended recipient of this email, you 
+must neither take any action based upon its contents, nor 
+copy or show it to anyone. Please contact the sender if 
+you believe you have received this email in error.
+
+
+thoth Website : http://thoth-server.appspot.com/

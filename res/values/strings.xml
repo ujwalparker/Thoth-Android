@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Thoth</string>
+    <string name="app_version">v 3.0</string>
+    <string name="nwkChkNf">Thoth needs to sync your logs with the server.</string>
+    <!-- Call Main START -->
+    <string name="t_c_duration_out_label">Total Outbound</string>
+    <string name="t_c_duration_out_data">0</string>
+    <string name="t_c_duration_out_data_dimension">min(s)</string>
+    <string name="t_c_duration_in_label">Total Inbound</string>
+    <string name="t_c_duration_in_data">0</string>
+    <string name="t_c_duration_in_data_dimension">min(s)</string>
+    <string name="t_c_total_out_label">Total Placed Calls</string>
+    <string name="t_c_total_out_data">0</string>
+    <string name="t_c_total_out_data_dimension">time(s)</string>
+    <string name="t_c_total_in_label">Total Received Calls</string>
+    <string name="t_c_total_in_data">0</string>
+    <string name="t_c_total_in_data_dimension">time(s)</string>
+    <string name="t_c_total_missed_label">Total Missed Calls</string>
+    <string name="t_c_total_missed_data">0</string>
+    <string name="t_c_total_missed_data_dimension">time(s)</string>
+    <string name="t_c_total_rejected_label">Total Rejected Calls</string>
+    <string name="t_c_total_rejected_data">0</string>
+    <string name="t_c_total_rejected_data_dimension">time(s)</string>
+    <string name="t_c_total_noa_label">Total Non-Answered Calls</string>
+    <string name="t_c_total_noa_data">0</string>
+    <string name="t_c_total_noa_data_dimension">time(s)</string>
+    <string name="t_c_top_out_label">Top 5 Dialled</string>
+    <string name="t_c_top_in_label">Top 5 Callers</string>
+    <string name="t_c_top_rejected_label">Top 5 Rejected</string>
+    <string name="t_c_top_missed_label">Top 5 Missed</string>
+    <string name="t_c_top_noa_label">Top 5 Non-Pickers</string>
+    <string name="t_c_child_name_label">Ujwal Parker</string>
+    <string name="t_c_child_duration_label">0 min(s)</string>
+    <string name="t_c_child_quantity_label">0 time(s)</string>
+    <!-- Call Main END -->
+    <!-- Messaging Main START -->
+    <string name="t_m_s_label">SMS</string>
+    <string name="t_m_m_label">MMS</string>
+    <string name="t_m_s_total_out_label">Total Outbound</string>
+    <string name="t_m_s_total_out_data">0</string>
+    <string name="t_m_s_total_in_label">Total Inbound</string>
+    <string name="t_m_s_total_in_data">0</string>
+    <string name="t_m_s_top_out_label">Top 5 Sent</string>
+    <string name="t_m_s_top_in_label">Top 5 Received</string>
+    <string name="t_m_m_total_out_label">Total Outbound</string>
+    <string name="t_m_m_total_out_data">0</string>
+    <string name="t_m_m_total_in_label">Total Inbound</string>
+    <string name="t_m_m_total_in_data">0</string>
+    <string name="t_m_m_top_out_label">Top 5 Sent</string>
+    <string name="t_m_m_top_in_label">Top 5 Received</string>
+    <string name="t_m_child_name_label">Ujwal Parker</string>
+    <string name="t_m_child_duration_label"></string>
+    <string name="t_m_child_quantity_label">0 time(s)</string>
+    <!-- Messaging Main END -->
+    <!-- Data Main START -->
+    <string name="t_d_total_out_label">Total Uploaded</string>
+    <string name="t_d_total_out_data">0 MB</string>
+    <string name="t_d_total_in_label">Total Downloaded</string>
+    <string name="t_d_total_in_data">0 MB</string>
+    <string name="t_d_mobile_out_label">Total Mobile Uploaded</string>
+    <string name="t_d_mobile_out_data">0 MB</string>
+    <string name="t_d_mobile_in_label">Total Mobile Downloaded</string>
+    <string name="t_d_mobile_in_data">0 MB</string>
+    <string name="t_d_app_out_label">Top 5 Uploader Apps</string>
+    <string name="t_d_app_in_label">Top 5 Downloader Apps</string>
+    <string name="t_d_child_name_label">Google Mail</string>
+    <string name="t_d_child_quantity_label">0 MB</string>
+    <string name="t_d_child_duration_label">since 02/02/11</string>
+    <!-- Data Main END -->
+    <!-- Sync Main START -->
+    <string name="t_s_web_h_label">Sync with server</string>
+    <string name="t_s_web_b_label">Synced at</string>
+    <string name="t_s_web_b_datetime">12:02 A.M. on 20/01/2011</string>
+    <string name="t_s_web_b_button">Sync Now</string>
+    <string name="t_s_thoth_h_label">View logs on Thoth Website</string>
+    <string name="t_s_thoth_b_button">Open Thoth Site</string>
+    <!-- Sync Main END -->
+    <!-- Setting Main START -->
+    <string name="t_se_header">Thoth Setting</string>
+    <string name="t_se_title">Server Sync</string>
+    <string name="t_se_c">Log - Call activity</string>
+    <string name="t_se_m_s">Log - SMS activity</string>
+    <string name="t_se_m_m">Log - MMS activity</string>
+    <string name="t_se_d">Log - Data activity</string>
+    <string name="t_se_gcal_on">Google Calendar - Call Logs</string>
+    <string name="t_se_gmail_on">GMail - SMS and MMS Logs</string>
+    <!-- Setting Main END -->
+    <string name="st_welcome">Welcome to ultimate logging.</string>
+    <string name="st_welcome_msg">Your phone has a limited capacity to store all the
+		phone calls, messages and data activity you undertake everyday.\n\nTo
+		be able to go back and get that specific number you forgot to save, a
+		message you loved but deleted by mistake or just for the fun of it,
+		Thoth helps you record every call, message, data activity that happens
+		on your phone. \n\nAll logs are stored to your Google Calendar or mailed to your mailbox. 
+		The account Thoth will use to identify you will be configured on
+		the following screens.\n\nAll this happens quietly without disturbing
+		you while you use your phone.</string>
+    <string name="st_profile">Profile</string>
+    <string name="st_profile_msg">* First time user : This code will be used to
+		associate all the phone calls, messages and data activity you
+		undertake on this device.\n\n** Returning user : You can link this
+		device to your earlier profile. Enter the profile code you entered
+		earlier.</string>
+    <string name="st_gmail_msg">You can configure Thoth to save all your SMS and
+		MMS to your Google Mail in-box.\n\nThis configuration involves adding
+		Thoth as a Google contact.\n\nAll messages will be tagged as SMS/MMS
+		and will be sent by Thoth App (thoth@gnuc.in)</string>
+    <string name="st_calendar_msg_1_1">You can configure Thoth to save all your call and message logs
+		to your Google Calendar.</string>
+    <string name="st_calendar_msg_1_2">Please choose a calendar to which call and message logs should be
+		logged.</string>
+    <string name="st_calendar_msg_2_1">You can configure Thoth to save all your call logs
+		to your Google Calendar.</string>
+    <string name="st_calendar_msg_2_2">Please choose a calendar to which calls should be
+		logged.</string>
+    <string name="st_calendar_msg_3_1">You can configure Thoth to save all your message logs
+		to your Google Calendar.</string>
+    <string name="st_calendar_msg_3_2">Please choose a calendar to which messages should be
+		logged.</string>
+    <string name="st_account_msg_1">Please choose an account you would like to
+		configure Thoth to use.</string>
+    <string name="st_account_msg_2">This will be the same account you will use to
+		access logs on the Thoth website.</string>
+    <string name="st_account_msg_3">Thoth will always use this account to identify you
+		irrespective of your phone number change.</string>
+    <string name="st_wait_msg_1_1">Thoth will now create and authenticate your account
+		on Thoth website.</string>
+    <string name="st_wait_msg_1_2">Account creation complete. Thoth will now collect
+		and analyse you logs.\n\nWill only take a few moments :)</string>
+    <string name="st_set_account_msg_1">Please wait while Thoth is configured :)</string>
+    <string name="no_nw_f">Could not update logs.\nNetwork was unavailable.</string>
+    <string name="no_secure_f">Authentication failed.\nPlease start Thoth.</string>
+    <string name="no_update_f">An update failed.\nPlease start Thoth.</string>
+    <string name="no_update_r">An update is pending.\nPlease start Thoth.</string>
+    <string name="no_statistics_f">Statistics update failed.\nPlease start Thoth.</string>
+    <string name="st_wait_msg_2">Please wait</string>
+    <string name="last_update_label">Last update :</string>
+    <string name="log_filter_label">Filter:</string>
+    <string name="log_filter_choice">Filter statistics for</string>
+    <string name="msg_recover_summary">Choose an option below to continue </string>
+
+    <string-array name="log_filter_choice_array">
+        <item>Today</item>
+        <item>This Week</item>
+        <item>This Month</item>
+        <item>Last Week</item>
+        <item>Last Month</item>
+        <!-- <item>This Year</item> -->
+    </string-array>
+
+    <string name="help_title">Help</string>
+    <string name="profile_value">Profile Creation.\nEnter profile code to use.</string>
+    <string name="ADWHIRL_KEY">0d1b36d5843b4cf0a28208b10c78704e</string>
+
+</resources>

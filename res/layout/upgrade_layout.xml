@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000" >
+
+    <TextView
+        android:id="@+id/upgrade_info"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:gravity="bottom"
+        android:padding="10dp"
+        android:text="Please wait ..."
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/upgrade_screen"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upgrade_info"
+        android:background="#000000"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/st_set_upgrade"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000" >
+
+            <RelativeLayout
+                android:id="@+id/st_set_upgrade_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/st_set_upgrade_1"
+                android:layout_margin="10dp"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/st_set_upgrade_2_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="3dp"
+                    android:src="@drawable/t_set_done"
+                    android:visibility="invisible" >
+                </ImageView>
+
+                <ProgressBar
+                    android:id="@+id/st_set_upgrade_2_pb1"
+                    style="@android:style/Widget.ProgressBar.Small"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/st_set_upgrade_2_ok"
+                    android:layout_margin="3dp" />
+
+                <TextView
+                    android:id="@+id/st_set_upgrade_2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/st_set_upgrade_2_ok"
+                    android:gravity="bottom"
+                    android:text="Log Collection"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" >
+                </TextView> <!-- #77FF00 -->
+
+                <ProgressBar
+                    android:id="@+id/st_set_upgrade_2_pb2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_toRightOf="@+id/st_set_upgrade_2_title" >
+                </ProgressBar>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_2_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_2_ok"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_2_1_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_2_1_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_2_1_ok"
+                        android:layout_margin="3dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_2_1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_2_1_ok"
+                        android:gravity="center"
+                        android:text="CALL logs"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_2_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_2_1"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_2_2_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_2_2_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_2_2_ok"
+                        android:layout_margin="3dp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_2_2_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_2_2_ok"
+                        android:gravity="center"
+                        android:text="SMS logs"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_2_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_2_2"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_2_3_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_2_3_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_2_3_ok"
+                        android:layout_margin="3dp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_2_3_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_2_3_ok"
+                        android:gravity="center"
+                        android:text="MMS logs"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_2_4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_2_3"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_2_4_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_2_4_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_2_4_ok"
+                        android:layout_margin="3dp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_2_4_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_2_4_ok"
+                        android:gravity="center"
+                        android:text="DATA logs"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/st_set_upgrade_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/st_set_upgrade_2"
+                android:layout_margin="10dp"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/st_set_upgrade_3_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="3dp"
+                    android:src="@drawable/t_set_done"
+                    android:visibility="invisible" >
+                </ImageView>
+
+                <ProgressBar
+                    android:id="@+id/st_set_upgrade_3_pb1"
+                    style="@android:style/Widget.ProgressBar.Small"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/st_set_upgrade_3_ok"
+                    android:layout_margin="3dp" />
+
+                <TextView
+                    android:id="@+id/st_set_upgrade_3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/st_set_upgrade_3_ok"
+                    android:gravity="bottom"
+                    android:text="Log Analysis"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" >
+                </TextView> <!-- #77FF00 -->
+
+                <ProgressBar
+                    android:id="@+id/st_set_upgrade_3_pb2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_toRightOf="@+id/st_set_upgrade_3_title"
+                    android:visibility="visible" >
+                </ProgressBar>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_3_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_3_ok"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_3_1_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_3_1_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_3_1_ok"
+                        android:layout_margin="3dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_3_1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_3_1_ok"
+                        android:gravity="center"
+                        android:text="Log Upload"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/st_set_upgrade_3_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/st_set_upgrade_3_1"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/st_set_upgrade_3_2_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="3dp"
+                        android:src="@drawable/t_set_done_ch"
+                        android:visibility="invisible" >
+                    </ImageView>
+
+                    <ProgressBar
+                        android:id="@+id/st_set_upgrade_3_2_pb"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_below="@+id/st_set_upgrade_3_2_ok"
+                        android:layout_margin="3dp" />
+
+                    <TextView
+                        android:id="@+id/st_set_upgrade_3_2_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_margin="3dp"
+                        android:layout_toRightOf="@+id/st_set_upgrade_3_2_ok"
+                        android:gravity="center"
+                        android:text="Analytics Download"
+                        android:textSize="15dp" >
+                    </TextView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000" >
+
+            <TextView
+                android:id="@+id/upgrade_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:text="Upgrade"
+                android:textColor="#202020"
+                android:textSize="55dp" >
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

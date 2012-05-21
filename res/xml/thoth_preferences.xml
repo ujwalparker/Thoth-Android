@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Logging by Thoth" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="APP_LOG_DATA"
+            android:summary="Data uploads and downloads will be monitored"
+            android:title="Data activity" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Thoth Connect + for Google  Mail" >
+        <com.gnuc.thoth.app.screens.DialogExPreference
+            android:defaultValue="false"
+            android:dialogLayout="@layout/setup_gmail_layout"
+            android:dialogTitle="Connect+ : GMail"
+            android:key="APP_GoMAIL"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:summary="Disabled "
+            android:title="Backup of SMS and MMS" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Thoth Connect + for Google Calendar" >
+        <com.gnuc.thoth.app.screens.DialogExPreference
+            android:defaultValue="false"
+            android:dialogLayout="@layout/setup_gcal_call_layout"
+            android:dialogTitle="Backup of all Calls | Google Calendar"
+            android:key="APP_GoCAL_CALL"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:summary="Disabled"
+            android:title="Backup of all Calls" />
+        <com.gnuc.thoth.app.screens.DialogExPreference
+            android:defaultValue="false"
+            android:dialogLayout="@layout/setup_gcal_msg_layout"
+            android:dialogTitle="Backup of SMS and MMS | Google Calendar"
+            android:key="APP_GoCAL_MSG"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:summary="Disabled"
+            android:title="Backup of SMS and MMS" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Recover messages backed-up by Thoth earlier"
+        android:title="Thoth Recover +" >
+        <com.gnuc.thoth.app.screens.DialogExPreference
+            android:defaultValue="false"
+            android:dialogLayout="@layout/msg_recover_layout"
+            android:dialogTitle="Recover your messages"
+            android:key="APP_RECOVER_MSGS"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:summary="Click to continue"
+            android:title="Recover messages" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Reporting by Thoth" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="APP_REPORT_LOGS"
+            android:summary="Thoth will email you all the logs it collects every week"
+            android:title="Send log reports to Mail" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Thoth Pro" >
+        <Preference
+            android:key="THOTH_PRO"
+            android:summary="Click to get Thoth Pro from the Market."
+            android:title="Remove ad&apos;s from Thoth" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Version" >
+        <Preference
+            android:key="LOG_MAIL_LOGS"
+            android:summary=""
+            android:title="Thoth v 3.0.0" />
+        <!-- <Preference -->
+        <!-- android:key="REPORT_CONSTRUCT" -->
+        <!-- android:summary="Test Report Construction." -->
+        <!-- android:title="Construct Report" /> -->
+        <!-- <Preference -->
+        <!-- android:key="REPORT_MAIL" -->
+        <!-- android:summary="Test Mail Report." -->
+        <!-- android:title="Mail Report" /> -->
+        <!-- <Preference -->
+        <!-- android:key="LOG_RESTORE" -->
+        <!-- android:summary="Test Log Restore." -->
+        <!-- android:title="Log Restore" /> -->
+    </PreferenceCategory>
+
+</PreferenceScreen>

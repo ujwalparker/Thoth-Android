@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gnuc.thoth"
+    android:versionCode="41"
+    android:versionName="3.0.1" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <!-- AdWhirl -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- AdWhirl -->
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar" >
+        <activity
+            android:name=".app.Main"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:name=".app.SetupMain" />
+        <activity android:name=".app.RescueMain" />
+        <activity android:name=".app.TabMain" />
+        <activity android:name=".app.PreferencesMain" />
+        <activity android:name=".app.screens.CallMain" />
+        <activity android:name=".app.screens.MessagingMain" />
+        <activity android:name=".app.screens.DataMain" />
+        <activity android:name=".app.screens.SyncMain" />
+        <activity android:name=".framework.recovery.MessageRecovery" />
+        <!-- Services -->
+
+        <service android:name=".service.MobileDataService" />
+        <service android:name=".service.WifiDataService" />
+        <service android:name=".service.AppDataService" />
+        <service android:name=".service.ThothService" />
+        <!-- Receivers -->
+        <receiver android:name=".service.receivers.StartOfDayReceiver" />
+        <receiver android:name=".service.receivers.EndOfDayReceiver" />
+        <receiver android:name=".service.receivers.DeviceStateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.conn.BACKGROUND_DATA_SETTING_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".service.receivers.PhoneStateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <action android:name="android.intent.extra.PHONE_NUMBER" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".service.receivers.LogUpdateReceiver" />
+        <receiver android:name=".service.receivers.LogSyncReceiver" />
+        <!-- Weekly -->
+        <receiver android:name=".service.receivers.ReportConstructor" />
+        <receiver android:name=".service.receivers.ReportMailer" />
+        <receiver android:name=".service.receivers.LogBackupReceiver" />
+        <receiver android:name=".service.receivers.AlternativeNotificationReceiver" />
+        <!-- Weekly -->
+        <!-- AdWhirl -->
+        <meta-data
+            android:name="ADWHIRL_KEY"
+            android:value="0d1b36d5843b4cf0a28208b10c78704e" />
+        <!-- /AdMob -->
+        <activity
+            android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+
+        <meta-data
+            android:name="ADMOB_PUBLISHER_ID"
+            android:value="a14d899beeed04f" />
+        <!-- /AdMob -->
+        <!-- /Millennial Media -->
+        <activity
+            android:name="com.millennialmedia.android.MMAdViewOverlayActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.millennialmedia.android.VideoPlayer"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- /Millennial Media -->
+        <!-- AdWhirl -->
+    </application>
+
+</manifest>

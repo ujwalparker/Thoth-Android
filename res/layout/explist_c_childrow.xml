@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="20dp"
+	android:id="@+id/explist_c_childrow"
+	android:padding="5dp">
+	<TextView
+		android:id="@+id/t_c_child_name_label_id"
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:maxWidth="140dp"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_marginLeft="55dp"
+		android:gravity="center_vertical|left"
+		android:text="@string/t_c_child_name_label"
+		android:textSize="15dp"
+		android:textColor="@color/bright_text_dark_focused"
+		android:visibility="invisible"></TextView>
+	<TextView
+		android:id="@+id/t_c_child_quantity_label_id"
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:maxWidth="140dp"
+		android:layout_toRightOf="@+id/t_c_child_name_label_id"
+		android:layout_alignParentTop="true"
+		android:padding="5dp"
+		android:gravity="center_vertical|right"
+		android:text="@string/t_c_child_quantity_label"
+		android:textSize="12dp"
+		android:textColor="@color/bright_text_dark_focused"
+		android:visibility="invisible"></TextView>
+	<TextView
+		android:id="@+id/t_c_child_duration_label_id"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:maxWidth="140dp"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:paddingRight="5dp"
+		android:gravity="center_vertical|right"
+		android:text="@string/t_c_child_duration_label"
+		android:textSize="14dp"
+		android:textColor="@color/bright_text_dark_focused"
+		android:visibility="invisible"></TextView>
+</RelativeLayout>

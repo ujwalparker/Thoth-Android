@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thoth_layout_id"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/gradient_view_two" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/app_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="bottom"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/app_icon_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/app_name_id"
+            android:src="@drawable/thoth" />
+
+        <ProgressBar
+            android:id="@+id/app_update_pb"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/app_name_id"
+            android:visibility="invisible" />
+
+        <Spinner
+            android:id="@+id/log_filter_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="top"
+            android:prompt="@string/log_filter_choice"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="1dp" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="0dp" />
+        </LinearLayout>
+    </TabHost>
+
+    <LinearLayout
+        android:id="@+id/ad_default"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:visibility="invisible" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ad_gnuc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="invisible" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="TODO"
+            android:src="@drawable/thoth_ad_alpha" >
+        </ImageView>
+    </LinearLayout>
+
+</LinearLayout>

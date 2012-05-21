@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<integer-array
+		name="call_main_headerqq">
+		<item>.png</item>
+		<item>.gif</item>
+		<item>.jpg</item>
+		<item>.jpeg</item>
+		<item>.bmp</item>
+	</integer-array>
+</resources>

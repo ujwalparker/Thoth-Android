@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/call_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:listSelector="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/t_c_duration_out_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_duration_out_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_duration_out_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_duration_out_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_duration_out" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_duration_out_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_duration_out_id"
+            android:text="@string/t_c_duration_out_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_duration_out_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_duration_out_data_dimension_id"
+            android:text="@string/t_c_duration_out_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_duration_in_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_duration_in_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_duration_in_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_duration_in_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_duration_in" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_duration_in_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_duration_in_id"
+            android:text="@string/t_c_duration_in_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_duration_in_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_duration_in_data_dimension_id"
+            android:text="@string/t_c_duration_in_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_total_out_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_total_out_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_total_out_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_total_out_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_total_out" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_total_out_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_out_id"
+            android:text="@string/t_c_total_out_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_total_out_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_out_data_dimension_id"
+            android:text="@string/t_c_total_out_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_total_in_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_total_in_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_total_in_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_total_in_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_total_in" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_total_in_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_in_id"
+            android:text="@string/t_c_total_in_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_total_in_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_in_data_dimension_id"
+            android:text="@string/t_c_total_in_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_total_missed_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_total_missed_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_total_missed_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_total_missed_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_total_missed" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_total_missed_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_missed_id"
+            android:text="@string/t_c_total_missed_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_total_missed_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_missed_data_dimension_id"
+            android:text="@string/t_c_total_missed_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_total_rejected_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_total_rejected_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_total_rejected_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_total_rejected_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_total_rej" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_total_rejected_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_rejected_id"
+            android:text="@string/t_c_total_rejected_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_total_rejected_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_rejected_data_dimension_id"
+            android:text="@string/t_c_total_rejected_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <RelativeLayout
+        android:id="@+id/t_c_total_noa_holder"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/t_c_total_noa_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:minWidth="120dp"
+            android:text="@string/t_c_total_noa_label"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/t_c_total_noa_id"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/t_c_total_noa" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/t_c_total_noa_data_dimension_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_noa_id"
+            android:text="@string/t_c_total_noa_data_dimension"
+            android:textColor="#B0B0B0" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_c_total_noa_data_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/t_c_total_noa_data_dimension_id"
+            android:text="@string/t_c_total_noa_data"
+            android:textColor="#FFFFFF" >
+        </TextView>
+    </RelativeLayout>
+
+</LinearLayout>

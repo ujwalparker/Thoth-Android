@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sync_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t_s_web_h_label_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="@string/t_s_web_h_label"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" >
+    </TextView>
+
+    <include layout="@layout/gradient_view_one" />
+
+    <LinearLayout
+        android:id="@+id/sync_main_first1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_s_web_b_label_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="@string/t_s_web_b_label"
+            android:textColor="#FFCC00" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/t_s_web_b_datetime_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:text="@string/t_s_web_b_datetime"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" >
+        </TextView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/t_s_web_b_button_id"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/button"
+        android:text="@string/t_s_web_b_button" >
+    </Button>
+
+    <ProgressBar
+        android:id="@+id/t_s_web_b_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:visibility="gone" >
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/t_s_web_b_status"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="Update in progress"
+        android:visibility="gone" />
+
+</LinearLayout>

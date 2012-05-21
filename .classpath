@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/joda-time"/>
+	<classpathentry kind="lib" path="lib/Ad_AdMob_4.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/Ad_AdWhirl_3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/Ad_InMobi_2.0.jar"/>
+	<classpathentry kind="lib" path="lib/Ad_MMAdView_4.2.6.jar"/>
+	<classpathentry kind="lib" path="lib/android-support-v13.jar"/>
+	<classpathentry kind="lib" path="lib/Android.Mail.jar"/>
+	<classpathentry kind="lib" path="lib/Android.Main.Activation.jar"/>
+	<classpathentry kind="lib" path="lib/Android.Main.Additional.jar"/>
+	<classpathentry kind="lib" path="lib/apache-mime4j-core-0.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/libGoogleAnalytics.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

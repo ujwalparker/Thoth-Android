@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/radialback" >
+
+    <ImageView
+        android:id="@+id/pn_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/thoth_splash" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/pn_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pn_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/app_name"
+        android:textColor="#000000"
+        android:textSize="25dp" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/pn_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pn_title"
+        android:layout_margin="5dp"
+        android:focusable="true"
+        android:hint="Enter a profile code of your choice"
+        android:lines="1"
+        android:text="" >
+    </EditText>
+
+    <Button
+        android:id="@+id/pn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pn_edit"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:text="Continue"
+        android:visibility="gone" >
+    </Button>
+
+</RelativeLayout>
